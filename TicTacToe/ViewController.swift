@@ -13,13 +13,24 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        TTTSocket.sharedInstance.socket.defaultSocket.on("test") { data, ack in
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
 
+    @IBAction func PlayAction(_ sender: UIButton) {
+        
+        self.performSegue(withIdentifier: "PlayModal", sender: "")
+        
+    }
+    
+    
 
 }
 
